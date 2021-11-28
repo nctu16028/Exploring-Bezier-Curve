@@ -1,11 +1,6 @@
 #pragma once
 #include <vector>
-
-struct Point
-{
-    double px;
-    double py;
-};
+#include "point.hpp"
 
 class Curve
 {
