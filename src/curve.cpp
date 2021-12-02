@@ -24,15 +24,10 @@ void Curve::setControlPoints(int i, double x, double y)
     control[i].Y() = y;
 }
 
-void Curve::printCurvePoints(int num)
+Point Curve::getCurvePoint(double time)
 {
-    double interval = 1.0 / (double)num;
-    for(int i=0; i<=num; i++)
-    {
-        double t = 0.0 + interval*i;
-        Point p = Curve::deCasteljau(t, 0, (int)control.size()-1);
-        std::cout << p.X() << "\t" << p.Y() << std::endl;
-    }
+    Point p = Curve::deCasteljau(time, 0, (int)control.size()-1);
+    return p;
 }
 
 Point Curve::deCasteljau(double t, int cnt_start, int degree)

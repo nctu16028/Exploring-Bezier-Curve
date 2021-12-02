@@ -1,5 +1,5 @@
 CXX = g++
-CFLAGS = -shared --std=c++11 -m64 -fPIC -Wall -Wextra -Werror
+CFLAGS = -shared --std=c++14 -m64 -fPIC -Wall -Wextra -Werror
 PY_INC = /usr/include/python3.8
 PYFLAGS = `python3 -m pybind11 --includes` -I $(PY_INC)
 

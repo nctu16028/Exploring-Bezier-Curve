@@ -16,5 +16,14 @@ if __name__ == '__main__':
             x = int(line[0])
             y = int(line[1])
             bezier.setControlPoints(i, x, y)
-    bezier.printCurvePoints(10)
+
+    curve_points = []
+    num_point = 10
+    interval = 1.0 / num_point
+    for i in range(num_point+1):
+        t = 0.0 + interval * i
+        point = bezier.getCurvePoint(t)
+        curve_points.append((point.X, point.Y))
+        #print("{}\t{}".format(point.X, point.Y))
+        #print(curve_points)
 

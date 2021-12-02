@@ -7,7 +7,7 @@ class Curve
 public:
     Curve(int deg);
     void setControlPoints(int i, double x, double y);
-    void printCurvePoints(int num); // for debugging
+    Point getCurvePoint(double time);
 
 private:
     Point deCasteljau(double t, int cnt_start, int degree);
