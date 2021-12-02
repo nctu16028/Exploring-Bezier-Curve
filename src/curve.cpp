@@ -1,17 +1,27 @@
 #include "curve.hpp"
 #include <iostream>
 
-Curve::Curve()
+Curve::Curve(int deg)
 {
-    int n;
-    std::cin >> n;
-    for(int i=0; i<=n; i++)
+    degree = deg;
+    control.resize(deg+1);
+}
+
+void Curve::setControlPoints(int i, double x, double y)
+{
+    // Exception handling
+    try
     {
-        Point cnt;
-        std::cin >> cnt.X() >> cnt.Y();
-        control.push_back(cnt);
+        if(i < 0 || i > degree)
+            throw "Invalid control point";
+    }
+    catch(char *excp)
+    {
+        std::cout << excp << std::endl;
     }
 
+    control[i].X() = x;
+    control[i].Y() = y;
 }
 
 void Curve::printCurvePoints(int num)
