@@ -54,7 +54,7 @@ Point Curve::deCasteljau(double t, int cnt_start, int degree)
     // Recursive part
     Point left_ref = Curve::deCasteljau(t, cnt_start, degree-1);
     Point right_ref = Curve::deCasteljau(t, cnt_start+1, degree-1);
-    Point ans = left_ref * (1-t) + right_ref * t;
+    Point ans = inner(left_ref, right_ref, t);
     return ans;
 }
 

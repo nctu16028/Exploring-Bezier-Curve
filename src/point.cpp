@@ -1,5 +1,12 @@
 #include "point.hpp"
 
+// custom constructor
+Point::Point(double x, double y)
+{
+    coord[0] = x;
+    coord[1] = y;
+}
+
 // x getter
 double Point::X() const
 {
@@ -39,6 +46,12 @@ Point Point::operator*(double c)
     Point ans;
     ans.X() = coord[0] * c;
     ans.Y() = coord[1] * c;
+    return ans;
+}
+
+Point inner(Point start, Point end, double ratio)
+{
+    Point ans = start * (1 - ratio) + end * ratio;
     return ans;
 }
 
